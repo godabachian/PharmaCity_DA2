@@ -1,0 +1,10 @@
+<div>
+    <h2>Ingresa tu codigo de compra y visualiza su estado</h2>
+    <mat-form-field appearance="fill" >
+        <mat-label>Código de compra</mat-label>
+        <input matInput [(ngModel)]="shoppingCode">
+    </mat-form-field>
+</div>
+<div>
+    <button mat-raised-button (click)="GetShoppingState()">Ver</button>
+</div>

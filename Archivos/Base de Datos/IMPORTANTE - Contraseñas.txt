@@ -1,0 +1,58 @@
+-------------------------- Usuarios en es sistema en blanco:----------------------------------------
+
+--------- ADMINS -----------
+Usuario: Admin
+Email: admin@gmail.com
+Contraseña: Password!
+-----------------------------
+
+
+
+-------------------------- Usuarios en el sistema cargado: ----------------------------------------
+
+--------- ADMINS -----------
+Usuario: Admin
+Email: admin@gmail.com
+Contraseña: Password!
+-----------------------------
+
+
+--------- PharmacyPablo ----------
+Rol: Owner
+Usuario: PabloG
+Email: PabloG@gmail.com
+Contraseña: Pablo123!
+
+Rol: Employee
+Usuario: Carlos22
+Email: Carlos22@gmail.com
+Contraseña: CarlosLopez.
+-----------------------------------
+
+
+
+--------- PharmacyJuan ----------
+Rol: Owner
+Usuario: JuanPerez
+Email: JuanPerez@gmail.com
+Contraseña: JuanPe...!
+
+Rol: Employee
+Usuario: Alberto
+Email: AlbertoM@gmail.com
+Contraseña: albertos_32
+-----------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+

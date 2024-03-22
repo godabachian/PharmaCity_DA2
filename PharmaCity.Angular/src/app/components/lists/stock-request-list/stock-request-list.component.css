@@ -1,0 +1,18 @@
+.stockRequests-list{
+    margin-top: 4vh;
+    max-width: 130vh;
+    margin: 0 auto;
+}
+.selection-list{
+    max-width: 130vh;
+    margin: 0 auto;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accept-stockRequest{
+    margin-top: 5vh;
+}

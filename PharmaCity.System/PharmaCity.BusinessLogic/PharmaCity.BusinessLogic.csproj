@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PharmaCity.IBusinessLogic\PharmaCity.IBusinessLogic.csproj" />
+    <ProjectReference Include="..\PharmaCity.IDataAccess\PharmaCity.IDataAccess.csproj" />
+    <ProjectReference Include="..\PharmaCity.IMechanism\PharmaCity.IMechanism.csproj" />
+  </ItemGroup>
+
+</Project>

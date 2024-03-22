@@ -1,0 +1,7 @@
+<div class="example-container">
+    <mat-form-field appearance="fill">
+        <mat-label>Introduce tu email</mat-label>
+        <input type="email" class="email" matInput placeholder="email@example.com" [formControl]="emailFormControl" [(ngModel)]="email" (input)="GetInputEmail(email)" required>
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+</div>

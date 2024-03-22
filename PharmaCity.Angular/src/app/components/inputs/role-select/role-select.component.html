@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+    <mat-label>Rol</mat-label>
+    <select matNativeControl [(ngModel)]="role" (change)="GetInputRole(role)" required>
+        <option value="0">Administrador</option>
+        <option value="1">Dueño</option>
+        <option value="2">Empleado</option>
+    </select>
+</mat-form-field>

@@ -1,0 +1,14 @@
+<div>
+    <h1>Crea una Farmacia</h1>
+    <form>
+        <h3>Datos de la Farmacia</h3>
+        <app-pharmacy-input (newItemEvent)="GetInputPharmacy($event)"></app-pharmacy-input>
+        <br>
+        <app-direction-input (newItemEvent)="GetInputDirection($event)"></app-direction-input>
+        <br>
+    </form>
+    <br>
+    <div class="buttons" (click)="InsertPharmacy()">
+        <button mat-raised-button>Crear</button>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div>
+    <form class="login-form">
+        <h1>Iniciar Sesión</h1>
+        <br>
+        <app-email-input (newItemEvent)="GetInputEmail($event)"></app-email-input>
+        <app-password-input (newItemEvent)="GetInputPassword($event)"></app-password-input>
+    </form>
+    <br>
+    <div class="buttons">
+        <button mat-raised-button (click)="Login()">Iniciar Sesión</button>
+        <br>
+        <br>
+        <button mat-raised-button routerLink="/register">Registrarse</button>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+.selection-list{
+    max-width: 130vh;
+    margin: 0 auto;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space{
+    margin-right: 25px;
+}
+.space-left{
+    margin-left: 25px;
+}

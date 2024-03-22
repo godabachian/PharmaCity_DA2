@@ -1,0 +1,31 @@
+<div class="accept-stockRequest">
+    <h2>Seleccione una solicitud, visualice sus peticiones y acepte o rechace la reposición: </h2> 
+    <button mat-raised-button (click)="AcceptPetition()">Aceptar</button><button mat-raised-button (click)="DeclinePetition()">Rechazar</button>
+</div>
+<div class="stockRequests-list">
+    <h1 class="title">Reposiciones de stock</h1>
+    <mat-selection-list class="selection-list" #shoes [multiple]="false">
+        <mat-divider></mat-divider>
+        <mat-list-option *ngIf="stockRequests.length == 0">Aún no hay reposiciones...</mat-list-option>
+        <mat-list-option class="selection-opt" *ngFor="let stockRequest of stockRequests" [value]="stockRequest" (click)="ChargePetitions(stockRequest)">
+            ID: {{stockRequest.id}} //
+            Creado por: {{stockRequest.employeeUserName}} //
+            Cantidad de Peticiones: {{stockRequest.petitions.length}}
+            <mat-divider></mat-divider>
+        </mat-list-option>
+    </mat-selection-list>
+</div>
+
+
+<div class="stockRequests-list">
+    <h1 class="title">Peticiones</h1>
+    <mat-selection-list class="selection-list" [multiple]="false">
+        <mat-divider></mat-divider>
+        <mat-list-option *ngIf="petitions.length == 0">Seleccione una reposicion de stock para ver detalles...</mat-list-option>
+        <mat-list-option class="selection-opt" *ngFor="let petition of petitions" [value]="petition">
+            Medicina: {{petition.medicineCode}} ||
+            Cantidad: {{petition.quantity}}
+            <mat-divider></mat-divider>
+        </mat-list-option>
+    </mat-selection-list>
+</div>

@@ -1,0 +1,22 @@
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.selection-list{
+    max-width: 130vh;
+    margin: 0 auto;
+}
+.shopp-list{
+    margin-top: 4vh;
+    max-width: 130vh;
+    margin: 0 auto;
+}
+
+.btn1{
+    margin-right:25px
+}
+.selection-opt{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

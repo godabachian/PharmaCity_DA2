@@ -1,0 +1,57 @@
+<div>
+    <h2>Editar Invitación</h2>
+    <form>
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre de usuario</mat-label>
+            <input matInput name="userName" [value]="userName" [(ngModel)]="userName">
+        </mat-form-field>
+        /
+        <mat-form-field appearance="fill">
+            <mat-label>Rol</mat-label>
+            <select matNativeControl name="role" [(ngModel)]="role" [value]="role">
+                <option value="Administrator">Administrador</option>
+                <option value="Owner">Dueño</option>
+                <option value="Employee">Empleado</option>
+            </select>
+        </mat-form-field>
+        /
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre de farmacia</mat-label>
+            <input matInput name="pharmacyName" [value]="pharmacyName" [(ngModel)]="pharmacyName">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button (click)="UpdateInvitation()">Actualizar</button> 
+        <br>
+        <br>
+        <p>Nota: (Si actualiza sin cambiar los datos, se actualizara únicamente el código de invitación)</p>
+    </form>
+</div>
+<div class="invitations-list">
+    <h1 class="title">Invitaciones</h1>
+    <mat-selection-list class="selection-list" #shoes [multiple]="false">
+        <mat-divider></mat-divider>
+        <mat-list-option class="selection-opt"*ngFor="let invitation of invitations" [value]="invitation" (click)="GetInvitationInfo(invitation)">
+            Usuario: {{invitation.userName}} //
+            Código: {{invitation.code}} //
+            Rol: {{invitation.role}} //
+            Farmacia: {{invitation.pharmacyName}} //
+            Estado: {{invitation.state}}
+            <mat-divider></mat-divider>
+        </mat-list-option>
+    </mat-selection-list>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>Código para copiar</mat-label>
+        <input matInput name="invitationCode" [value]="invitationCode" [(ngModel)]="invitationCode">
+    </mat-form-field>
+</div>

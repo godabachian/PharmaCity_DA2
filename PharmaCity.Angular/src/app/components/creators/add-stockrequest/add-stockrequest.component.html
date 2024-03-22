@@ -1,0 +1,34 @@
+<div>
+    <h1>Crea una StockRequest</h1>
+    <form>
+        <h3>Datos de las Peticiones</h3>
+        <app-medicinecode-input (newItemEvent)="GetInputMedicineCode($event)"></app-medicinecode-input>
+        <br>
+        <app-quantity-input (newItemEvent)="GetInputQuantity($event)"></app-quantity-input>
+        <br>
+    </form>
+    <br>
+    <div class="buttons" >
+        <button mat-raised-button (click)="CreatePetition()">Crear Petición</button>
+    </div>
+    <br>
+    <div class="petitions-list">
+        <h2>Peticiones</h2>
+        <mat-selection-list class="selection-list" #shoes [multiple]="false">
+            <mat-divider></mat-divider>
+            <mat-list-option *ngIf="petitions.length == 0" >
+                Agregue peticiones...
+                <mat-divider></mat-divider>
+            </mat-list-option>
+            <mat-list-option *ngFor="let petition of petitions" [value]="petition">
+                Código de Medicina: {{petition.medicineCode}} ||
+                Cantidad a reponer: {{petition.quantity}}
+                <mat-divider></mat-divider>
+            </mat-list-option>
+        </mat-selection-list>
+    </div>
+    <br>
+    <div class="buttons" >
+        <button mat-raised-button class="btn1" (click)="InsertStockRequest()">Crear StockRequest</button><button mat-raised-button  (click)="ClearPetitions()">Eliminar StockRequest</button>
+    </div>
+</div>

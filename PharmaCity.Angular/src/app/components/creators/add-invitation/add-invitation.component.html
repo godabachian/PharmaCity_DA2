@@ -1,0 +1,15 @@
+<div>
+    <h1>Crea una invitación</h1>
+    <form>
+        <h3>Datos de la invitación</h3>
+        <app-username-input (newItemEvent)="GetInputUserName($event)"></app-username-input>
+        <app-role-select (newItemEvent)="GetInputRole($event)"></app-role-select>
+        <br>
+        <app-pharmacy-input *ngIf="role!=0" (newItemEvent)="GetInputPharmacy($event)"></app-pharmacy-input>
+    </form>
+    <br>
+    <div class="buttons" (click)="CreateInvitation()">
+        <button mat-raised-button>Crear</button>
+    </div>
+
+</div>

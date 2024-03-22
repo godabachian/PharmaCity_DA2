@@ -1,0 +1,56 @@
+<div>
+    <h2>Filtrar:</h2>
+    <p>(Nota: El filtro por farmacia, mostrará únicamente las medicinas que posean stock)</p>
+    <mat-form-field appearance="fill" >
+        <mat-label>Nombre Medicina</mat-label>
+        <input matInput [value]="nameMedicine" [(ngModel)]="nameMedicine">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Nombre Farmacia</mat-label>
+        <input matInput [value]="namePharmacy" [(ngModel)]="namePharmacy">
+    </mat-form-field>
+    <div class="buttons">
+        <button mat-raised-button class="space" (click)="GetMedicinesByFilter()">Filtrar</button><button mat-raised-button class='space-left'(click)="GetMedicines()">Quitar</button>
+    </div>
+</div>
+<div class="invitations-list">
+    <h1 class="title">Medicinas</h1>
+    <mat-selection-list class="selection-list" #shoes [multiple]="false">
+        <mat-divider></mat-divider>
+        <mat-list-option *ngIf="medicines.length == 0">Aún no hay medicinas...</mat-list-option>
+        <mat-list-option *ngFor="let medicine of medicines" [value]="medicine" (click)="SelectMedicine(medicine)">
+            Nombre: {{medicine.name}} // 
+            Code: {{medicine.code}} //
+            Presentation: {{medicine.presentation}} //
+            Price: {{medicine.price}} //
+            Stock: {{medicine.stock}} //
+            Farmacia: {{medicine.pharmacy}}
+            <mat-divider></mat-divider>
+        </mat-list-option>
+    </mat-selection-list>
+</div>
+<br>
+<br>
+<mat-form-field appearance="fill">
+    <mat-label>Cantidad a comprar</mat-label>
+    <input matInput [(ngModel)]="quantity">
+</mat-form-field>
+<button mat-raised-button class="space-left" (click)="AddToCartMedicine()">Agregar al carrito</button>
+<br>
+<br>
+<div class="invitations-list">
+    <h1 class="title">Carrito</h1>
+    <mat-selection-list class="selection-list" #shoes [multiple]="false">
+        <mat-divider></mat-divider>
+        <mat-list-option *ngIf="cart.length == 0">Agregue medicinas a su carrito...</mat-list-option>
+        <mat-list-option *ngFor="let shop of cart" [value]="shop">
+            Medicamento: {{shop.medicineCode}} //
+            Cantidad a comprar: {{shop.quantity}}
+            <mat-divider></mat-divider>
+        </mat-list-option>
+    </mat-selection-list>
+</div>
+<br>
+<br>
+<button mat-raised-button class="space" (click)="BuyMedicines()">Comprar</button><button mat-raised-button (click)="ClearCart()">Limpiar</button>

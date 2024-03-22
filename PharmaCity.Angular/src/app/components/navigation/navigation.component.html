@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Opciones</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/login" *ngIf="role == ''"><mat-icon>login</mat-icon>Iniciar Sesión</a>
+      <a mat-list-item *ngIf="role != ''" (click)="LogOut()"><mat-icon>logout</mat-icon>Cerrar Sesión</a>
+      <a mat-list-item routerLink="/register" *ngIf="role == ''"><mat-icon>person_add</mat-icon>Registrarse</a>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/home"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>Inicio</a>
+      <a mat-list-item routerLink="/pharmacies"><mat-icon> local_pharmacy</mat-icon>Farmacias</a>
+      <a mat-list-item routerLink="/medicines"><mat-icon>medication</mat-icon>Medicinas</a>
+      <a mat-list-item routerLink="/shopping-state"><mat-icon>shopping_basket</mat-icon>Estado</a>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+      <p class="role-conteiner" *ngIf="role != ''"><span class="role">{{role}}</span></p>
+      <a mat-list-item routerLink="/invitations" *ngIf="role == 'Administrator'"><mat-icon>supervised_user_circle</mat-icon>Invitaciones</a>
+      <a mat-list-item routerLink="/stockRequests" *ngIf="role == 'Owner'"><mat-icon>shelves</mat-icon>Reposiciones</a>
+      <a mat-list-item routerLink="/shopping" *ngIf="role == 'Employee'"><mat-icon>shopping_basket</mat-icon>Compras</a>
+      <a mat-list-item routerLink="/export" *ngIf="role == 'Employee'"><mat-icon>file_download</mat-icon>Exportar Medicinas</a>
+      <a mat-list-item routerLink="/create-invitation" *ngIf="role == 'Administrator'"><mat-icon>add</mat-icon>Invitación</a>
+      <a mat-list-item routerLink="/create-pharmacy" *ngIf="role == 'Administrator'"><mat-icon>add</mat-icon>Farmacia</a>
+      <a mat-list-item routerLink="/create-medicine" *ngIf="role == 'Employee'"><mat-icon>add</mat-icon>Medicina</a>
+      <a mat-list-item routerLink="/create-stockRequest" *ngIf="role == 'Employee'"><mat-icon>add</mat-icon>Reposición stock</a>
+      <a mat-list-item routerLink="/delete-medicine" *ngIf="role == 'Employee'"><mat-icon>delete_outline</mat-icon>Medicina</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span><mat-icon>store</mat-icon> PharmaCity </span>
+    </mat-toolbar>
+
+    <app-dashboard></app-dashboard>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,11 @@
+<div class="pharmacy-list">
+    <mat-selection-list class="selection-list" #shoes [multiple]="false">
+        <mat-divider></mat-divider>
+        <mat-list-option *ngIf="pharmacies.length == 0">Aún no hay farmacias...</mat-list-option>
+        <mat-list-option class="selection-opt" *ngFor="let pharmacy of pharmacies" [value]="pharmacy">
+            Nombre: {{pharmacy.name}} // 
+            Dirección: {{pharmacy.direction}}
+            <mat-divider></mat-divider>
+        </mat-list-option>
+    </mat-selection-list>
+</div>

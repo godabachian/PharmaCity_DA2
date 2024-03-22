@@ -1,0 +1,16 @@
+.invitations-list{
+    flex-direction: column;
+    display:flex;
+    justify-content: left;
+    align-items: left;
+    margin-top: 4vh;
+}
+.selection-list{
+    max-width: 130vh;
+    margin: 0 auto;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

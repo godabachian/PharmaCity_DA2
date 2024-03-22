@@ -1,0 +1,36 @@
+<div>
+    <h2>Aceptar compra:</h2>
+    <button mat-raised-button class="btn1" (click)="AcceptPurchase()" >Aceptar</button><button mat-raised-button (click)="DeclinePurchase()" >Rechazar</button>
+    <br>
+    <br>
+    <p>(Nota: Si aceptas la compra, se aceptarán todas las peticiones de tu farmacia únicamente)</p>
+</div>
+<div class="shopp-list">
+    <h1 class="title">Compras</h1>
+    <mat-selection-list class="selection-list" #shoes [multiple]="false">
+        <mat-divider></mat-divider>
+        <mat-list-option *ngIf="shopping.length == 0">Aún no hay compras...</mat-list-option>
+        <mat-list-option class="selection-opt" *ngFor="let shop of shopping" [value]="shop" (click)="ChargePetitions(shop) ; SelectPurchase(shop)">
+            Compra nro: {{shop.id}} //
+            Código de compra: {{shop.purchaseCode}} //
+            Estado: {{shop.state}}
+            <mat-divider class="selection-opt"></mat-divider>
+        </mat-list-option>
+    </mat-selection-list>
+</div>
+<br>
+<br>
+<br>
+<div class="shopp-list">
+    <h1 class="title">Peticiones</h1>
+    <mat-selection-list class="selection-list" #shoes [multiple]="false">
+        <mat-divider></mat-divider>
+        <mat-list-option *ngIf="petitions.length == 0">Seleccione una compra para ver detalles...</mat-list-option>
+        <mat-list-option class="selection-opt" *ngFor="let petition of petitions" [value]="petition">
+            Medicamento: {{petition.medicineCode}} // 
+            Cantidad comprada: {{petition.quantity}} //
+            Estado: {{petition.stateString}}
+            <mat-divider class="selection-opt"></mat-divider>
+        </mat-list-option>
+    </mat-selection-list>
+</div>

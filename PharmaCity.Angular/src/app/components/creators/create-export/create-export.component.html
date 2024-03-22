@@ -1,0 +1,12 @@
+<div>
+    <h1>Exportar medicamentos del sistema</h1>
+    <mat-form-field appearance="fill">
+        <mat-label>Exportadores</mat-label>
+        <select matNativeControl [(ngModel)]="exporter">
+            <option *ngFor="let exporter of exporters" [value]="exporter">{{exporter}}</option>
+        </select>
+    </mat-form-field>
+    <button mat-raised-button (click)="GetExporters()">Actualizar</button>
+    <br>
+    <button mat-raised-button (click)="ExportMedicines()">Exportar</button>
+</div>

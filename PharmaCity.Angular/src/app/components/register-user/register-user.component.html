@@ -1,0 +1,20 @@
+<div>
+    <h1>Registrate</h1>
+    <p>IMPORTANTE: Para registrarse debe poseer un código de invitación</p>
+    <br>
+    <form>
+        <h3>Datos de Usuario</h3>
+        <app-username-input (newItemEvent)="GetInputUserName($event)"></app-username-input>
+        <app-direction-input (newItemEvent)="GetInputDirection($event)"></app-direction-input>
+        <br>
+        <app-email-input (newItemEvent)="GetInputEmail($event)"></app-email-input>
+        <app-password-input (newItemEvent)="GetInputPassword($event)"></app-password-input>
+        <br>
+        <h3>Código de invitación</h3>
+        <app-code-input (newItemEvent)="GetInputCode($event)"></app-code-input>
+    </form>
+    <br>
+    <div class="buttons" (click)="CreateUser()">
+        <button mat-raised-button>Registrarme</button>
+    </div>
+</div>

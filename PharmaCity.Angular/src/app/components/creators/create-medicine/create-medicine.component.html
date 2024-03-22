@@ -1,0 +1,29 @@
+<div>
+    <h1>Crea una Medicina</h1>
+    <form>
+        <h3>Datos de la Medicina</h3>
+        <app-medicine-input (newItemEvent)="GetInputMedicine($event)"></app-medicine-input>
+        <br>
+        <app-symptoms-input (newItemEvent)="GetInputSymptoms($event)"></app-symptoms-input>
+        <br>
+        <app-presentation-input (newItemEvent)="GetInputPresentation($event)"></app-presentation-input>
+        <br>
+        <app-unit-input (newItemEvent)="GetInputUnit($event)"></app-unit-input>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Receta</mat-label>
+            <mat-select [(value)]="receipt" required>
+                <mat-option value="Si">Si</mat-option>
+                <mat-option value="No">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <app-quantity-input (newItemEvent)="GetInputQuantity($event)"></app-quantity-input>
+        <br>
+        <app-price-input (newItemEvent)="GetInputPrice($event)"></app-price-input>
+    </form>
+    <br>
+    <div class="buttons" (click)="CreateMedicine()">
+        <button mat-raised-button>Crear</button>
+    </div>
+</div>
